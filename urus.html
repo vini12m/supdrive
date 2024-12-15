@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Sup Drive - Urus</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/logosite2.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+<style>        
+       
+        .product-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .product-image {
+            flex: 1;
+            text-align: center;
+        }
+        .product-image img {
+            max-width: 80%;
+            
+        }
+        .thumbnail-images {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .thumbnail-images img {
+            width: 190px; 
+            margin: 0 5px;
+           
+            
+        }
+              
+        .product-info {
+            flex: 1;
+            padding-left: 20px;
+            text-align: center;
+        }
+        .product-info h1 {
+            font-size: 28px;
+            color: #e69821;
+        }
+        .price {
+            font-size: 24px;
+            color: #e69821;
+            margin-bottom: 20px;
+        }
+        .info-section {
+            background-color: #1f1f1f;
+            padding: 20px;            
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(230, 152, 33, 0.5);
+            width: 39%;
+            margin-left: 6%;
+        }
+        .info-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .info-section ul li {
+            padding: 5px 0;
+        }     
+        .contact-form {
+            background-color: #1f1f1f;
+            padding: 20px;            
+            color: #fff;
+            
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            
+            border: none;
+            background-color: #333;
+            color: #fff;
+        }
+        .contact-form input[type="submit"] {
+            background-color: #e69821;
+            cursor: pointer;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #cf8a1c;
+        }       
+        
+        a {
+            color: rgb(255, 255, 255);
+            background-color: transparent;
+            text-decoration: none;
+        }
+        .topo{
+            position: fixed;
+            width: 100%;
+            top: 0;                      
+        }
+        .principal{
+            margin-top: 100px;
+        }   
+        @media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-image img {
+        max-width: 100%;
+    }
+
+    .thumbnail-images img {
+        width: 100px; /* Ajuste o tamanho dos thumbnails em telas menores */
+    }
+
+    .product-info {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .info-section {
+        margin-bottom: 20px;
+    }
+
+    nav .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .thumbnail-images img {
+        width: 80px;
+    }
+
+    .product-info h1 {
+        font-size: 22px;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt" style="color: #e69821; margin-right: 0.5rem;"></small>
+                    <small>Av. Rondon Pacheco, Uberlândia, Brasil</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="far fa-clock" style="color: #e69821; margin-right: 0.5rem;"></small>
+                    <small>Segunda - Sexta: 09:00 - 18:00, Sábado: 09:00 - 12:00</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-phone-alt" style="color: #e69821; margin-right: 0.5rem;"></small>
+                    <small>+55 (34) 0000-0000</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn btn-sm-square bg-white" style="color: #e69821; margin-right: 0.25rem;" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square bg-white" style="color: #e69821; margin-right: 0.25rem;" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-sm-square bg-white" style="color: #e69821;" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Topbar End -->
+    
+    
+      <!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <img src="img/logosite.jpg" alt="Sup Drive Logo" style="max-height: 50px;">
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="index.html" class="nav-item nav-link" style="color: #e69821;">Home</a>
+            <a href="estoque.html" class="nav-item nav-link" style="color: #e69821;">Estoque</a>
+            <a href="about.html" class="nav-item nav-link" style="color: #e69821;">Nossa história</a>
+            <a href="team.html" class="nav-item nav-link" style="color: #e69821;">Quem somos</a>
+            <a href="service.html" class="nav-item nav-link" style="color: #e69821;">Serviços</a>
+            <a href="contact.html" class="nav-item nav-link" style="color: #e69821;">Contato</a>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+    <!-- Page Header Start -->
+    
+        <br>
+            <div class="container text-center">
+                <h1 class="" style="color: black;">Lamborghini - Urus 4.0 V8 - 2019</h1>
+                <h3 style="color: #e69821;">R$2.990.000,00</h3>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+<div class="principal">     
+   
+
+    <div class="product-container">       
+        <!-- Seção de Imagem e Miniaturas -->
+        <div class="product-image">
+            <img src="https://bocamafrapremium.com.br/wp-content/uploads/2024/08/73a2bd171c664edd80c98fb2bc1e6503_1724855349018.jpg" alt="BMW M3 Competition">
+            <div class="thumbnail-images">
+                <img src="https://bocamafrapremium.com.br/wp-content/uploads/2024/08/7c519ef08da04cb9a4ebddb82998fa8a_1724855349137.jpg" alt="Imagem 1">
+                <img src="https://bocamafrapremium.com.br/wp-content/uploads/2024/08/0253bfa3ab8041868be1aa3ebf3f6dd1_1724855349157.jpg" alt="Imagem 2">
+                <img src="https://bocamafrapremium.com.br/wp-content/uploads/2024/08/0759f225c7914b4badcd23a033f49017_1724855348999.jpg" alt="Imagem 3">
+            </div>
+        </div> 
+        <!-- Seção de Contato -->
+        <div class="product-info">
+            <div class="contact-form">
+                <h4 style="color: white;"><i class="fa fa-envelope" style="color: #e69821;"></i> Contate o vendedor</h4>
+                <form>
+                    <input type="text" id="name" placeholder="Nome" required>
+                  
+
+                    <input type="email" id="email" placeholder="E-mail" required>
+                  
+
+                    <input type="text" id="phone" placeholder="Telefone" required>
+                    
+
+                    <textarea id="message" rows="5" placeholder="Mensagem" required></textarea>
+                    
+
+                    <input type="submit" value="Enviar" style="background-color: #e69821; color: #fff; font-weight: bold;">
+                </form>
+            </div>
+        </div>
+    </div> 
+
+    <!-- Informações do Veículo -->
+    <div class="info-section">
+        <h3 style="color: white;">Informações do Veículo:</h3>
+        <ul style="color: white;">
+            <li>Combustível: Gasolina</li>
+            <li>Potência: 650 CV</li>
+            <li>0 a 100 km/h em 3,6s</li>
+            <li>Velocidade Máxima: 305 km/h</li>
+            <li>Branco</li>
+            <li>Interno Bicolor Terra Ásia</li>                 
+        </ul>
+    </div>  
+</div>
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-light mb-4">Endereço</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Av. Rondon Pacheco, Uberlândia, Brasil</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+55 (34) 0000-0000</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>supdrive@gmail.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>                        
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-light mb-4">Horário de funciomento</h4>
+                <h6 class="text-light">Segunda - Sexta:</h6>
+                <p class="mb-4">09:00 - 18:00</p>
+                <h6 class="text-light">Sábado:</h6>
+                <p class="mb-0">09:00 - 12:00</p>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-light mb-4">Duvida</h4>
+                <p>Se estiver alguma duvida envie para a gente</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <textarea class="form-control" placeholder="Mensagem" id="message" ></textarea>
+                                    
+                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2" style="background-color: #e69821; border-color: #e69821;">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">Sup Drive</a>                      
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu">
+                        <a href="index.html">Home</a>                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" style="background-color: #e69821; border-color: #e69821;"><i class="bi bi-arrow-up" ></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/tempusdominus/js/moment.min.js"></script>
+<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+</html>
