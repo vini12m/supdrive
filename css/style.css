@@ -1,0 +1,449 @@
+/********** Template CSS **********/
+:root {
+    --primary: #e69821;
+    --secondary: #000000;
+    --light: #F2F2F2;
+    --dark: #000000;
+}
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 2px;
+}
+
+
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #00ff0d;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-light .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+.navbar-light .navbar-brand,
+.navbar-light a.btn {
+    height: 75px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.navbar-light.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header ***/
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        position: relative;
+        min-height: 450px;
+    }
+    
+    #header-carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.page-header {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-header-inner {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+/*** Facts ***/
+.fact {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/carousel-bg-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*** Service ***/
+
+.service .nav .nav-link {
+    background: var(--light);
+    transition: .5s;
+}
+
+.service .nav .nav-link.active {
+    background: var(--primary);
+}
+
+.service .nav .nav-link.active h4 {
+    color: #FFFFFF !important;
+}
+
+/*** Footer ***/
+.footer {
+    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(../img/carousel-bg-1.jpg) center center no-repeat;
+    background-size: cover;
+     background: #323131;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .3);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+/* Container principal */
+.columns-container {
+    justify-content: center;
+    padding: 30px;
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza os itens */
+    gap: 20px;          
+}
+
+/* Coluna dos itens */
+.column {
+    background: #323131;
+    padding: 10px;
+    width: 90%; /* Preenche grande parte da tela */
+    max-width: 800px; /* Limita a largura máxima */
+    height: auto;
+    box-sizing: border-box;
+    margin: 20px 0 0;
+    color: white;
+    display: flex;
+    flex-direction: row; /* Alinha imagem e informações horizontalmente */
+    box-shadow: 0 0 15px rgba(230, 152, 33, 0.5);
+    display: flex;
+    flex-direction: row; /* Mantém o alinhamento horizontal */
+    gap: 0; /* Remove espaçamento entre os elementos dentro do container */
+    padding: 0; /* Remove espaçamento interno */
+    margin: 0; /* Remove espaçamento externo */
+    box-sizing: border-box; /* Garante que padding e border não afetem o tamanho total */
+
+    
+}
+
+/* Ajuste no estoque */
+.estoque {
+    margin-top: 100px;
+}        
+
+.h2 {
+    color: #e69821;
+}
+
+/* Links */
+a {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.h1-a, .p {
+    color: white;
+    text-align: center;
+}
+
+/* Imagem */
+.img-1 {
+    width: 50%; /* Define que a imagem ocupa metade do espaço */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 0; /* Remove margens extras */
+    padding: 0; /* Remove espaçamento interno */
+    object-fit: cover; /* Faz a imagem preencher seu espaço */
+    
+}    
+
+/* Informação */
+.info {
+    text-align: left;
+    width: 50%; /* Informação ocupa metade do espaço */
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.info-a {
+    text-align: center;          
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e69821;
+    width: 50%; /* Botão maior para computadores */
+              
+}
+
+/* Navegador de página */
+.navegador {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagina {
+    color: white;
+    text-align: center;
+    background-color: #e69821;
+    width: 30px;
+    height: 30px;    
+    text-align: center;
+    margin-left: 7px;
+}
+
+.pagina:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.pag1 {
+    font-size: 25px;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 1024px) {
+    .column {
+        width: 80%; /* Ajuste para tablets */
+        flex-direction: column; /* Ajustar para layout vertical */
+    }
+    .img-1 {
+        width: 100%; /* Imagem ocupa toda a largura */
+        
+    }
+    .info {
+        width: 100%; /* Informação ocupa toda a largura */
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .column {
+        width: 90%; /* Ajuste para telas menores */
+    }
+    .img-1 {
+        width: 100%; /* Imagem ocupa toda a largura */
+    }
+    .info {
+        padding: 20px; /* Melhor espaçamento em dispositivos menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .column {
+        width: 100%; /* Preencher quase toda a largura em telas muito pequenas */
+        padding: 15px;
+    }
+    .img-1 {
+        width: 100%;
+    }
+    .info {
+        width: 100%;
+    }
+    .info-a {
+        width: 80%; /* Ajustar tamanho do botão */
+    }
+    .pagina {
+        width: 25px;
+        height: 25px;
+        font-size: 14px; /* Fonte menor para páginas */
+    }
+    .h1-a, .p {
+        font-size: 14px; /* Ajuste no tamanho da fonte para celulares */
+    }
+}
+
