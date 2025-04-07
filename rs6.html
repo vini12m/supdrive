@@ -121,24 +121,66 @@
         .principal{
             margin-top: 100px;
         }
-    .carrossel {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    overflow: hidden;
-}
+  /* Estilos para o carrossel */
+        .carrossel-container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
 
-.carrossel-imagens {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+        .carrossel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
 
-.carrossel-imagens img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+        .carrossel img {
+            width: 100%;
+            height: auto;
+        }
 
+        /* Estilos para os controles */
+        .controle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .controle-esquerda {
+            left: 10px;
+        }
+
+        .controle-direita {
+            right: 10px;
+        }
+
+        /* Estilos do ponto indicador */
+        .indicadores {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .indicador {
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .indicador-ativo {
+            background-color: white;
+        }
 button {
     position: absolute;
     top: 50%;
@@ -295,11 +337,64 @@ button:hover {
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
 </div>
+            <div class="carrossel-container">
+    <div class="carrossel">
+         <img src="https://bocamafrapremium.com.br/wp-content/uploads/2025/01/e8c87ff8f7274866b940f69294fbd8a3_1737640707370.jpg" alt="">
+         <img src="https://bocamafrapremium.com.br/wp-content/uploads/2025/01/09f5fd0d2a414745bd32338757449994_1737640707386.jpg" alt="Imagem 1">
+       <img src="https://bocamafrapremium.com.br/wp-content/uploads/2025/01/f2673f13521d4e6ca47b60d6324bc95f_1737640707345.jpg" alt="Imagem 2">
+        <img src="https://bocamafrapremium.com.br/wp-content/uploads/2025/01/bd0fe876801640d4b83db4e7a6e92370_1737640707052.jpg" alt="Imagem 3">
+    </div>
+
+    <button class="controle controle-esquerda" onclick="moverCarrossel(-1)">&#10094;</button>
+    <button class="controle controle-direita" onclick="moverCarrossel(1)">&#10095;</button>
+
+    <div class="indicadores">
+        <span class="indicador" onclick="irParaImagem(0)"></span>
+        <span class="indicador" onclick="irParaImagem(1)"></span>
+        <span class="indicador" onclick="irParaImagem(2)"></span>
+    </div>
+</div>
+
+<script>
+    let indexAtual = 0;
+    const carrossel = document.querySelector('.carrossel');
+    const indicadores = document.querySelectorAll('.indicador');
+
+    function moverCarrossel(direcao) {
+        indexAtual += direcao;
+
+        if (indexAtual < 0) {
+            indexAtual = indicadores.length - 1;
+        } else if (indexAtual >= indicadores.length) {
+            indexAtual = 0;
+        }
+
+        atualizarCarrossel();
+    }
+
+    function irParaImagem(index) {
+        indexAtual = index;
+        atualizarCarrossel();
+    }
+
+    function atualizarCarrossel() {
+        carrossel.style.transform = `translateX(-${indexAtual * 100}%)`;
+
+        // Atualizar indicadores
+        indicadores.forEach((indicador, i) => {
+            if (i === indexAtual) {
+                indicador.classList.add('indicador-ativo');
+            } else {
+                indicador.classList.remove('indicador-ativo');
+            }
+        });
+    }
+</script>
        <div class="thumbnail-images">
                 <img src="https://bocamafrapremium.com.br/wp-content/uploads/2025/01/e8c87ff8f7274866b940f69294fbd8a3_1737640707370.jpg" alt="">
-                <img src="https://bocamafrapremium.com.br/wp-content/uploads/2024/10/548bab80a15d42b7a91944478c0e5002_1705495601929.jpeg" alt="Imagem 1">
-                <img src="https://bocamafrapremium.com.br/wp-content/uploads/2024/10/c32b22d0ae9447c192bb57751a509f18_1705495602137.jpeg" alt="Imagem 2">
-                <img src="https://bocamafrapremium.com.br/wp-content/uploads/2024/10/14ce4de72a414b78be135d04785918b9_1705495602119.jpeg" alt="Imagem 3">
+         <img src="https://bocamafrapremium.com.br/wp-content/uploads/2025/01/09f5fd0d2a414745bd32338757449994_1737640707386.jpg" alt="Imagem 1">
+       <img src="https://bocamafrapremium.com.br/wp-content/uploads/2025/01/f2673f13521d4e6ca47b60d6324bc95f_1737640707345.jpg" alt="Imagem 2">
+        <img src="https://bocamafrapremium.com.br/wp-content/uploads/2025/01/bd0fe876801640d4b83db4e7a6e92370_1737640707052.jpg" alt="Imagem 3">
             </div>    
         </div> 
       
